@@ -1,7 +1,7 @@
 <!--
-author:   Juan Miguel (Juanmi) — Curso Claude Code Profesional
-email:    curso-claude-code@example.com
-version:  0.1.0
+author:   Cortaire, Juan Miguel — Curso Claude Code From Beginner to Professional
+email:    juanmicortaire@gmail.com
+version:  1.0.0
 language: es
 narrator: Spanish Female
 

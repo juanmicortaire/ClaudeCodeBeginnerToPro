@@ -1,7 +1,7 @@
 <!--
-author:   Juan Miguel (Juanmi) — Curso Claude Code Profesional
-email:    curso-claude-code@example.com
-version:  0.1.0
+author:   Cortaire, Juan Miguel — Curso Claude Code From Beginner to Professional
+email:    juanmicortaire@gmail.com
+version:  1.0.0
 language: es
 narrator: Spanish Female
 
@@ -32,9 +32,9 @@ En los módulos anteriores aprendiste cada pieza por separado: memoria, extensio
 Este es el pipeline maestro del curso. Conecta los 7 agentes del roster en un flujo secuencial donde cada fase produce el input de la siguiente.
 
 ``` ascii
-  ┌─────────────────────────────────────────────────────────┐
-  │          FEATURE LIFECYCLE PIPELINE                      │
-  │                                                          │
+  ┌────────────────────────────────────────────────────────┐
+  │          FEATURE LIFECYCLE PIPELINE                    │
+  │                                                        │
   │  ┌──────────┐   ┌──────────┐   ┌──────────┐            │
   │  │ FASE 1   │──►│ FASE 2   │──►│ FASE 3   │            │
   │  │ Spec     │   │ Diseño   │   │ Implement│            │
@@ -45,29 +45,29 @@ Este es el pipeline maestro del curso. Conecta los 7 agentes del roster en un fl
   │  │Output:   │   │Output:   │   │Output:   │            │
   │  │spec.md   │   │design.md │   │código    │            │
   │  └──────────┘   └──────────┘   └────┬─────┘            │
-  │                                      │                   │
-  │                    ┌─────────────────┼─────────────┐     │
-  │                    ▼                 ▼             ▼     │
-  │              ┌──────────┐   ┌──────────┐   ┌─────────┐ │
-  │              │ FASE 4   │   │ FASE 5   │   │ FASE 6  │ │
-  │              │ Testing  │   │ Security │   │ Review  │ │
-  │              │          │   │          │   │ + Docs  │ │
-  │              │@qa-      │   │@security-│   │@code-   │ │
-  │              │ engineer │   │ analyst  │   │ reviewer│ │
-  │              │          │   │          │   │@doc-    │ │
-  │              │          │   │          │   │ writer  │ │
-  │              └────┬─────┘   └────┬─────┘   └────┬────┘ │
-  │                   │              │               │      │
-  │                   └──────────────┼───────────────┘      │
-  │                                  ▼                      │
-  │                          ┌──────────────┐               │
-  │                          │   FASE 7     │               │
-  │                          │   PR + Merge │               │
-  │                          │              │               │
-  │                          │ Git MCP +    │               │
-  │                          │ PR skill     │               │
-  │                          └──────────────┘               │
-  └─────────────────────────────────────────────────────────┘
+  │                                     │                  │
+  │                   ┌─────────────────┼──────────┐       │
+  │                   ▼                 ▼          ▼       │
+  │             ┌──────────┐   ┌──────────┐   ┌─────────┐  │
+  │             │ FASE 4   │   │ FASE 5   │   │ FASE 6  │  │
+  │             │ Testing  │   │ Security │   │ Review  │  │
+  │             │          │   │          │   │ + Docs  │  │
+  │             │@qa-      │   │@security-│   │@code-   │  │
+  │             │ engineer │   │ analyst  │   │ reviewer│  │
+  │             │          │   │          │   │@doc-    │  │
+  │             │          │   │          │   │ writer  │  │
+  │             └────┬─────┘   └────┬─────┘   └────┬────┘  │
+  │                  │              │               │      │
+  │                  └──────────────┼───────────────┘      │
+  │                                 ▼                      │
+  │                         ┌──────────────┐               │
+  │                         │   FASE 7     │               │
+  │                         │   PR + Merge │               │
+  │                         │              │               │
+  │                         │ Git MCP +    │               │
+  │                         │ PR skill     │               │
+  │                         └──────────────┘               │
+  └────────────────────────────────────────────────────────┘
 ```
 
     {{1}}

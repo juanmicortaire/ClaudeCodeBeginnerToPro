@@ -1,7 +1,7 @@
 <!--
-author:   Juan Miguel (Juanmi) — Curso Claude Code Profesional
-email:    curso-claude-code@example.com
-version:  0.1.0
+author:   Cortaire, Juan Miguel — Curso Claude Code From Beginner to Professional
+email:    juanmicortaire@gmail.com
+version:  1.0.0
 language: es
 narrator: Spanish Female
 
@@ -35,28 +35,27 @@ Claude Code tiene un sistema de memoria de tres capas. Todas se cargan al inicio
   Persistencia                    Quién lo escribe
        │                                │
        ▼                                ▼
-
   ┌──────────────────────────────────────────┐
-  │  Capa 3: Memoria de Sesión              │  ◄── Se genera automáticamente
+  │  Capa 3: Memoria de Sesión               │  ◄── Se genera automáticamente
   │  (contexto activo de la conversación)    │      durante la conversación
   │  ► Tus prompts                           │
   │  ► Respuestas de Claude                  │  Vida: solo la sesión actual
   │  ► Resultados de herramientas            │  Se pierde al cerrar (salvo -c)
   └──────────────────────────────────────────┘
   ┌──────────────────────────────────────────┐
-  │  Capa 2: Auto Memory (MEMORY.md)        │  ◄── Claude lo escribe solo
+  │  Capa 2: Auto Memory (MEMORY.md)         │  ◄── Claude lo escribe solo
   │  (~/.claude/projects/<proyecto>/memory/) │
   │  ► Patrones observados                   │  Vida: indefinida
   │  ► Preferencias aprendidas               │  Local por máquina
   │  ► Insights de debugging                 │
   └──────────────────────────────────────────┘
-  ┌──────────────────────────────────────────┐
-  │  Capa 1: CLAUDE.md                       │  ◄── TÚ lo escribes
+  ┌───────────────────────────────────────────┐
+  │  Capa 1: CLAUDE.md                        │  ◄── TÚ lo escribes
   │  (archivos en el proyecto y globales)     │
   │  ► Convenciones del proyecto              │  Vida: indefinida
   │  ► Comandos de build/test                 │  Compartido vía git
   │  ► Decisiones de arquitectura             │
-  └──────────────────────────────────────────┘
+  └───────────────────────────────────────────┘
 ```
 
 La relación entre capas es complementaria: **CLAUDE.md** contiene tus requisitos explícitos, **Auto Memory** captura lo que Claude observa de tu forma de trabajar, y la **Memoria de Sesión** es el contexto vivo de la conversación actual.
@@ -235,14 +234,14 @@ Auto Memory es el sistema por el que Claude Code acumula conocimiento entre sesi
   Claude observa ──►           Claude guarda ──►            absolutos ──►
   Guarda en MEMORY.md          Guarda en MEMORY.md          Guarda en MEMORY.md
 
-                    ┌──────────────────────────────┐
+                    ┌───────────────────────────────┐
                     │  ~/.claude/projects/          │
-                    │    <proyecto>/memory/          │
+                    │    <proyecto>/memory/         │
                     │    ├── MEMORY.md    (índice)  │
-                    │    ├── debugging.md            │
-                    │    ├── api-conventions.md      │
-                    │    └── workflow-habits.md      │
-                    └──────────────────────────────┘
+                    │    ├── debugging.md           │
+                    │    ├── api-conventions.md     │
+                    │    └── workflow-habits.md     │
+                    └───────────────────────────────┘
                               │
                               ▼
                     Se carga automáticamente
@@ -432,25 +431,25 @@ Después de experimentar con decenas de proyectos, esta es la rutina que maximiz
 
 ``` ascii
   ┌─ INICIO DE SESIÓN ──────────────────────────────┐
-  │                                                   │
-  │  1. Abrir sesión (claude, o claude -c)            │
-  │  2. Contexto: "¿Qué hicimos ayer en [feature]?"  │
-  │  3. Definir tarea: "Hoy implementamos [X]"        │
-  │                                                   │
-  ├─ TRABAJO (bloques de 30-45 min) ─────────────────┤
-  │                                                   │
-  │  4. Trabajar en la tarea                          │
-  │  5. /cost cada 30-45 minutos                      │
-  │     Si >50K tokens ──► /compact                   │
-  │     Si cambias de tema ──► /clear                 │
-  │                                                   │
-  ├─ FIN DE SESIÓN ──────────────────────────────────┤
-  │                                                   │
-  │  6. "¿Cuáles fueron las decisiones clave?"        │
-  │  7. Actualizar CLAUDE.md con decisiones nuevas    │
-  │  8. Auto Memory guardará el resto solo            │
-  │                                                   │
-  └──────────────────────────────────────────────────┘
+  │                                                 │
+  │  1. Abrir sesión (claude, o claude -c)          │
+  │  2. Contexto: "¿Qué hicimos ayer en [feature]?" │
+  │  3. Definir tarea: "Hoy implementamos [X]"      │
+  │                                                 │
+  ├─ TRABAJO (bloques de 30-45 min) ────────────────┤
+  │                                                 │
+  │  4. Trabajar en la tarea                        │
+  │  5. /cost cada 30-45 minutos                    │
+  │     Si >50K tokens ──► /compact                 │
+  │     Si cambias de tema ──► /clear               │
+  │                                                 │
+  ├─ FIN DE SESIÓN ─────────────────────────────────┤
+  │                                                 │
+  │  6. "¿Cuáles fueron las decisiones clave?"      │
+  │  7. Actualizar CLAUDE.md con decisiones nuevas  │
+  │  8. Auto Memory guardará el resto solo          │
+  │                                                 │
+  └─────────────────────────────────────────────────┘
 ```
 
     {{1}}

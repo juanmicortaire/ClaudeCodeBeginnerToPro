@@ -1,7 +1,7 @@
 <!--
-author:   Juan Miguel (Juanmi) — Curso Claude Code Profesional
-email:    curso-claude-code@example.com
-version:  0.1.0
+author:   Cortaire, Juan Miguel — Curso Claude Code From Beginner to Professional
+email:    juanmicortaire@gmail.com
+version:  1.0.0
 language: es
 narrator: Spanish Female
 
@@ -37,11 +37,11 @@ Antes de profundizar en cada mecanismo, necesitas un mapa mental de cómo encaja
   ├─────────────────────────────────────────────────────────┤
   │                                                         │
   │   SLASH COMMANDS          SKILLS          SUBAGENTES    │
-  │   ┌─────────────┐   ┌─────────────┐   ┌─────────────┐ │
-  │   │ /comando    │   │ Auto-invoca │   │ Contexto    │ │
-  │   │ Manual      │   │ por Claude  │   │ aislado     │ │
-  │   │ 1 archivo   │   │ Directorio  │   │ Workers     │ │
-  │   └─────────────┘   └─────────────┘   └─────────────┘ │
+  │   ┌─────────────┐   ┌─────────────┐   ┌─────────────┐   │
+  │   │ /comando    │   │ Auto-invoca │   │ Contexto    │   │
+  │   │ Manual      │   │ por Claude  │   │ aislado     │   │
+  │   │ 1 archivo   │   │ Directorio  │   │ Workers     │   │
+  │   └─────────────┘   └─────────────┘   └─────────────┘   │
   │          │                  │                 │         │
   │          └──────────────────┼─────────────────┘         │
   │                             │                           │
@@ -57,7 +57,7 @@ Antes de profundizar en cada mecanismo, necesitas un mapa mental de cómo encaja
   │                    └─────────────────┘                  │
   │                                                         │
   │   PLUGINS = empaquetado de cualquier combinación        │
-  │             de los anteriores para distribuir            │
+  │             de los anteriores para distribuir           │
   └─────────────────────────────────────────────────────────┘
 ```
 
@@ -235,38 +235,38 @@ Always end with an executive summary.
 Este es el concepto que hace a las skills dramáticamente más eficientes que cargar instrucciones en CLAUDE.md o en el prompt:
 
 ``` ascii
-  ┌─────────────────────────────────────────────────┐
-  │          AL INICIO DE SESIÓN                    │
+  ┌──────────────────────────────────────────────────┐
+  │          AL INICIO DE SESIÓN                     │
   │                                                  │
   │  Claude carga SOLO:                              │
-  │  ┌──────────────────────────────────┐            │
-  │  │ name: code-review               │ ~50 tokens │
-  │  │ description: Reviews code for...│            │
-  │  └──────────────────────────────────┘            │
-  │  ┌──────────────────────────────────┐            │
-  │  │ name: generate-tests            │ ~50 tokens │
-  │  │ description: Generates unit...  │            │
-  │  └──────────────────────────────────┘            │
-  │  ┌──────────────────────────────────┐            │
-  │  │ name: deploy-staging            │ ~50 tokens │
-  │  │ description: Deploys current... │            │
-  │  └──────────────────────────────────┘            │
+  │  ┌─────────────────────────────────┐             │
+  │  │ name: code-review               │ ~50 tokens  │
+  │  │ description: Reviews code for...│             │
+  │  └─────────────────────────────────┘             │
+  │  ┌─────────────────────────────────┐             │
+  │  │ name: generate-tests            │ ~50 tokens  │
+  │  │ description: Generates unit...  │             │
+  │  └─────────────────────────────────┘             │
+  │  ┌─────────────────────────────────┐             │
+  │  │ name: deploy-staging            │ ~50 tokens  │
+  │  │ description: Deploys current... │             │
+  │  └─────────────────────────────────┘             │
   │                                                  │
   │  Total: ~150 tokens para 3 skills                │
   │                                                  │
-  ├─────────────────────────────────────────────────┤
-  │          CUANDO SE ACTIVA UNA SKILL             │
+  ├──────────────────────────────────────────────────┤
+  │          CUANDO SE ACTIVA UNA SKILL              │
   │                                                  │
   │  Claude carga las instrucciones completas:       │
-  │  ┌──────────────────────────────────┐            │
-  │  │ When reviewing code, always...  │            │
-  │  │ 1. Security scan first...       │ ~500 tokens│
-  │  │ 2. Logic review...              │            │
-  │  │ ...                             │            │
-  │  └──────────────────────────────────┘            │
+  │  ┌─────────────────────────────────┐             │
+  │  │ When reviewing code, always...  │             │
+  │  │ 1. Security scan first...       │ ~500 tokens │
+  │  │ 2. Logic review...              │             │
+  │  │ ...                             │             │
+  │  └─────────────────────────────────┘             │
   │                                                  │
-  │  Ahorro: 98% respecto a cargar todo siempre     │
-  └─────────────────────────────────────────────────┘
+  │  Ahorro: 98% respecto a cargar todo siempre      │
+  └──────────────────────────────────────────────────┘
 ```
 
     {{1}}
@@ -388,10 +388,10 @@ Los hooks son scripts que se ejecutan automáticamente en puntos específicos de
   └──────┬──────┘
          │
          ▼
-  ┌──────────────┐     ┌─────────────────────┐
-  │ PreToolUse   │────►│ Hook: ¿Permitir?    │
+  ┌──────────────┐     ┌──────────────────────┐
+  │ PreToolUse   │────►│ Hook: ¿Permitir?     │
   │              │     │ ¿Modificar input?    │
-  └──────┬───────┘     └─────────────────────┘
+  └──────┬───────┘     └──────────────────────┘
          │
          ▼
   ┌──────────────┐
@@ -402,10 +402,10 @@ Los hooks son scripts que se ejecutan automáticamente en puntos específicos de
   └──────┬───────┘
          │
          ▼
-  ┌──────────────┐     ┌─────────────────────┐
+  ┌──────────────┐     ┌──────────────────────┐
   │ PostToolUse  │────►│ Hook: Formatear?     │
   │              │     │ Lint? Test? Notificar│
-  └──────────────┘     └─────────────────────┘
+  └──────────────┘     └──────────────────────┘
 ```
 
 Los hooks principales son:
@@ -522,21 +522,21 @@ MCP es el protocolo estándar abierto que conecta Claude Code con herramientas, 
   │   Claude Code    │
   │   (MCP Client)   │
   │                  │
-  │  "Obtén los PRs  │          ┌────────────────────┐
+  │  "Obtén los PRs  │          ┌─────────────────────┐
   │   abiertos del   │─────────►│  GitHub MCP Server  │
-  │   repo"          │          └────────────────────┘
+  │   repo"          │          └─────────────────────┘
   │                  │
-  │  "Ejecuta esta   │          ┌────────────────────┐
+  │  "Ejecuta esta   │          ┌─────────────────────┐
   │   query SQL"     │─────────►│  PostgreSQL MCP     │
-  │                  │          └────────────────────┘
+  │                  │          └─────────────────────┘
   │                  │
-  │  "Busca bugs     │          ┌────────────────────┐
+  │  "Busca bugs     │          ┌─────────────────────┐
   │   en Jira"       │─────────►│  Jira MCP Server    │
-  │                  │          └────────────────────┘
+  │                  │          └─────────────────────┘
   │                  │
-  │  "Abre esta URL  │          ┌────────────────────┐
+  │  "Abre esta URL  │          ┌─────────────────────┐
   │   en el browser" │─────────►│  Browser-use MCP    │
-  │                  │          └────────────────────┘
+  │                  │          └─────────────────────┘
   └──────────────────┘
 ```
 

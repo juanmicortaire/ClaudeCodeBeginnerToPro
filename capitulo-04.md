@@ -1,7 +1,7 @@
 <!--
-author:   Juan Miguel (Juanmi) — Curso Claude Code Profesional
-email:    curso-claude-code@example.com
-version:  0.1.0
+author:   Cortaire, Juan Miguel — Curso Claude Code From Beginner to Professional
+email:    juanmicortaire@gmail.com
+version:  1.0.0
 language: es
 narrator: Spanish Female
 
@@ -114,10 +114,10 @@ Claude no crea subagentes para tareas simples, lecturas de archivos pequeñas, o
   Claude ESPERA                      Claude CONTINÚA trabajando
          │                                  │
          ▼                                  │
-  Recibe resultado                   ┌──────┴──────┐
+  Recibe resultado                   ┌──────┴───────┐
          │                           │ Notificación │
          ▼                           │ al completar │
-  Continúa con el resultado          └─────────────┘
+  Continúa con el resultado          └──────────────┘
 
   Usar cuando:                       Usar cuando:
   - Necesitas el resultado           - La tarea es larga
@@ -263,7 +263,7 @@ Esta es la sección central del módulo. Vamos a diseñar un equipo completo de 
   │              @developer ──► Implementación          │
   │                     │                               │
   │                     ▼                               │
-  │              @qa-engineer ──► Tests                  │
+  │              @qa-engineer ──► Tests                 │
   │                     │                               │
   │                     ▼                               │
   │           @security-analyst ──► Security review     │
@@ -272,7 +272,7 @@ Esta es la sección central del módulo. Vamos a diseñar un equipo completo de 
   │           @code-reviewer ──► Code review final      │
   │                     │                               │
   │                     ▼                               │
-  │            @doc-writer ──► Documentación             │
+  │            @doc-writer ──► Documentación            │
   │                     │                               │
   │                     ▼                               │
   │                  PR + Deploy                        │
@@ -566,9 +566,9 @@ Agent Teams es la funcionalidad más avanzada de Claude Code. Lanzada como exper
         │                           │
    ┌────┼────┐              ┌──────┼──────┐
    ▼    ▼    ▼              ▼      ▼      ▼
-  ┌─┐  ┌─┐  ┌─┐          ┌──┐  ┌──┐  ┌──┐
-  │A│  │B│  │C│          │A │◄─►│B │◄─►│C │
-  └─┘  └─┘  └─┘          └──┘  └──┘  └──┘
+  ┌─┐  ┌─┐  ┌─┐            ┌──┐   ┌──┐   ┌──┐
+  │A│  │B│  │C│            │A │◄─►│B │◄─►│C │
+  └─┘  └─┘  └─┘            └──┘   └──┘   └──┘
    │    │    │
    └────┼────┘            Los teammates hablan
         │                 ENTRE SÍ directamente
@@ -632,11 +632,11 @@ Este es el patrón más poderoso de Agent Teams y merece atención especial:
                  │
      ┌───────────┼───────────────┐
      ▼           ▼               ▼
-  ┌──────┐   ┌──────┐       ┌──────┐
-  │Agent1│   │Agent2│  ...  │Agent5│
-  │Memory│   │Event │       │Race  │
-  │leak? │   │loop? │       │cond? │
-  └──┬───┘   └──┬───┘       └──┬───┘
+  ┌──────┐   ┌──────┐        ┌──────┐
+  │Agent1│   │Agent2│  ...   │Agent5│
+  │Memory│   │Event │        │Race  │
+  │leak? │   │loop? │        │cond? │
+  └──┬───┘   └──┬───┘        └──┬───┘
      │          │               │
      ◄──────────┼───────────────►
      │    Debate: intentan      │
@@ -691,7 +691,7 @@ Este es el patrón más poderoso de Agent Teams y merece atención especial:
 En Coordinator Mode, Claude actúa exclusivamente como orquestador: planifica, divide el trabajo, asigna a subagentes y sintetiza resultados, pero no implementa nada directamente.
 
 ``` ascii
-  ┌────────────────────────────────────────────────┐
+  ┌─────────────────────────────────────────────────┐
   │              COORDINATOR (Claude)               │
   │                                                 │
   │  1. Recibe la tarea del usuario                 │
@@ -703,7 +703,7 @@ En Coordinator Mode, Claude actúa exclusivamente como orquestador: planifica, d
   │  7. Presenta resultado final al usuario         │
   │                                                 │
   │  NO implementa código directamente              │
-  └──────────────────────┬─────────────────────────┘
+  └──────────────────────┬──────────────────────────┘
                          │
             ┌────────────┼────────────┐
             ▼            ▼            ▼
@@ -728,16 +728,16 @@ En Coordinator Mode, Claude actúa exclusivamente como orquestador: planifica, d
 Una variante poderosa del Coordinator Mode es el patrón Builder-Validator:
 
 ``` ascii
-  ┌──────────┐        ┌──────────────┐
-  │ BUILDER  │───────►│  VALIDATOR   │
-  │          │        │              │
-  │@developer│        │@code-reviewer│
-  │          │        │@qa-engineer  │
-  │Implementa│◄───────│              │
+  ┌──────────┐         ┌──────────────┐
+  │ BUILDER  │────────►│  VALIDATOR   │
+  │          │         │              │
+  │@developer│         │@code-reviewer│
+  │          │         │@qa-engineer  │
+  │Implementa│◄────────│              │
   │          │ feedback│Revisa contra │
-  │Corrige   │ si falla│criterios de │
-  │          │        │calidad       │
-  └──────────┘        └──────────────┘
+  │Corrige   │ si falla│criterios de  │
+  │          │         │calidad       │
+  └──────────┘         └──────────────┘
         │                    │
         │    Ciclo hasta     │
         │    que pase ───────┘
